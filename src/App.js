@@ -7,7 +7,7 @@ import AutoGrid from "./components/AutoGrid";
 
 const App = () => {
 
-  const [tragos, setTragos] = useState("");
+  const [trago, setTragos] = useState("");
   const [tragosArray, setTragosArray] = useState([]);
   const [options, setOptions] = useState([]);
   
@@ -17,24 +17,24 @@ const App = () => {
   }, []);
 
   const obtenerTrago = async() => {
-
+    
+    //array de autocompletado
     try{
 
       const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' ;
       const res = await axios.get(url);
       const listaTragos = res.data.results;
-      const nombres = listaTragos.map((tragos)=> tragos.name);
 
-      setOptions(listaTragos.map((tragos)=> tragos.name));
+      setOptions(listaTragos.map((nombreTrago)=> nombreTrago.name));
 
     } catch(error) {
         console.log(error);
     }
   }
-
+ // realizar una lista de tragos para casamiento, cumpleaños o eventos 
   const getTragos = async () => {
     try {
-      const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' ;
+      const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${trago}` ;
       const res = await axios.get(url);
       
 
