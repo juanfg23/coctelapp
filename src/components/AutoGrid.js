@@ -4,7 +4,8 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import casamiento from './static/images/grid-list/casamiento.jpg';
 import cumpleaños from './static/images/grid-list/cumpleaños.jpg';
-import eventos from './static/images/grid-list/eventos.jpg'
+import eventos from './static/images/grid-list/eventos.jpg';
+
 
 const images = [
   {
@@ -132,6 +133,8 @@ export default function ButtonBases() {
           </span>
         </ButtonBase>
       ))}
+     
     </div>
   );
 }
+

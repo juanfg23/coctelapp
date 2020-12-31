@@ -12,7 +12,7 @@ const App = () => {
   const [options, setOptions] = useState([]);
   
 
-  useEffect( () => {
+  /*useEffect( () => {
     obtenerTrago();
   }, []);
 
@@ -30,8 +30,10 @@ const App = () => {
     } catch(error) {
         console.log(error);
     }
-  }
+  }*/
+
  // realizar una lista de tragos para casamiento, cumpleaños o eventos 
+// crea un array que luego muestra en una tabla
   const getTragos = async () => {
     try {
       const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${trago}` ;
@@ -39,9 +41,9 @@ const App = () => {
       
 
       const tragoObjeto = {
-        id: res.data.id,
+        name: res.data.drinks.strDrink,
       };
-      //console.log(res.data.name)
+      console.log(res);
 
       setTragosArray([...tragosArray, tragoObjeto]);
     } catch (error) {
@@ -56,7 +58,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log("hola");
+    //console.log(res.data.name);
     getTragos();
   };
 
@@ -64,6 +66,14 @@ const App = () => {
   return (
     <div className="App">
       <AutoGrid/>
+      <form onSubmit={handleSubmit}>
+         
+        <label>
+            Name:
+            <input type="text" name="name" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   );
 }

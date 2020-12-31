@@ -25,22 +25,22 @@ export default function TablaDensa(props) {
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
-            <TableCell align="right">Nombre</TableCell>
-            <TableCell align="right">Tipo</TableCell>
-            <TableCell align="right">Altura&nbsp;(cm)</TableCell>
-            <TableCell align="right">Peso&nbsp;(kg)</TableCell>
-            <TableCell align="right">Batallas</TableCell>
-            <TableCell align="right">Sprite frente</TableCell>
-            <TableCell align="right">Sprite espalda</TableCell>
+            <TableCell align="right"></TableCell>
+            <TableCell align="right"></TableCell>
+            <TableCell align="right"></TableCell>
+            <TableCell align="right"></TableCell>
+            <TableCell align="right"></TableCell>
+            <TableCell align="right"></TableCell>
+            <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {props.tragosArray.map((row) => (
-            <TableRow key={row.id}>
+            <TableRow key={}>
               <TableCell component="th" scope="row">
                 {row.id}
               </TableCell>
-              <TableCell align="right">{row.Nombre}</TableCell>
+              <TableCell align="right">{}</TableCell>
               <TableCell align="right">{}</TableCell>
               <TableCell align="right">{}</TableCell>
               <TableCell align="right">{}</TableCell>
